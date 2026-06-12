@@ -8,6 +8,9 @@ persona you can talk to. Built around one hard constraint: **it must say
 > A device-first persona runtime. Not a chatbot that improvises — a retrieval system
 > that refuses to answer when the memory isn't there.
 
+📝 **Engineering case study** — how "say I don't know" is enforced in code, not
+just prompted: [docs/CASE_STUDY.md](docs/CASE_STUDY.md)
+
 ## Why it's interesting
 
 - **Grounding-before-inference invariant** — every response passes through a grounding
