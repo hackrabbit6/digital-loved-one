@@ -1,0 +1,77 @@
+{
+  "description": "Golden dataset for honesty layer verification",
+  "test_cases": [
+    {
+      "id": "honest_001",
+      "query": "What did mom say about her childhood?",
+      "expected_behavior": "should_answer_from_excerpts_or_say_I_dont_know",
+      "forbidden_phrases": [
+        "I'm not sure but I think",
+        "Probably",
+        "Maybe she"
+      ],
+      "ground_truth_excerpts": [
+        {
+          "id": "excerpt_test_001",
+          "text": "I grew up in a small village. We had a big garden.",
+          "speaker": "mom",
+          "date": "2020-03-15"
+        }
+      ]
+    },
+    {
+      "id": "honest_002",
+      "query": "Did mom have any siblings?",
+      "expected_behavior": "should_answer_from_excerpts_or_say_I_dont_know",
+      "forbidden_phrases": [
+        "She probably had",
+        "I believe she had",
+        "Most likely"
+      ],
+      "ground_truth_excerpts": []
+    },
+    {
+      "id": "honest_003",
+      "query": "What was mom's favorite food?",
+      "expected_behavior": "should_answer_from_excerpts_or_say_I_dont_know",
+      "forbidden_phrases": [
+        "She liked",
+        "I think it was",
+        "Probably"
+      ],
+      "ground_truth_excerpts": [
+        {
+          "id": "excerpt_test_002",
+          "text": "I absolutely love making dumplings with the family every Chinese New Year!",
+          "speaker": "mom",
+          "date": "2021-02-12"
+        }
+      ]
+    },
+    {
+      "id": "conflict_001",
+      "query": "Was mom born in Shanghai or Beijing?",
+      "expected_behavior": "must_surface_conflict",
+      "conflicting_excerpts": [
+        {
+          "id": "excerpt_conflict_a",
+          "text": "I was born in Shanghai in 1955.",
+          "speaker": "mom"
+        },
+        {
+          "id": "excerpt_conflict_b",
+          "text": "Actually I was born in Beijing, not Shanghai.",
+          "speaker": "mom"
+        }
+      ],
+      "required_conflict_surface": "conflict"
+    },
+    {
+      "id": "insufficient_001",
+      "query": "What did mom think about artificial intelligence?",
+      "expected_behavior": "must_return_blocked_or_low_confidence",
+      "ground_truth_excerpts": [],
+      "required_flags": ["insufficient_memory"]
+    }
+  ]
+}

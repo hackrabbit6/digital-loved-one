@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1777988926592,
+  "projectRoot": "/Users/hackrabbit/Documents/backend",
+  "techStack": {
+    "languages": [
+      {
+        "name": "Go",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "go.mod"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "go",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "go build ./cmd/server/main.go 2>&1 && pkill -f \"main\" 2>/dev/null; sleep 1\nSTORE_PATH=./test_data ./main &\nsleep 2\ncurl -s -X POST http://localhost:8080/api/chat \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"query\":\"妈妈说了什么话？\",\"personaId\":\"demo_persona\"}' | jq .",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "tests"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "cmd": {
+      "path": "cmd",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1777988926564,
+      "keyFiles": []
+    },
+    "conflict": {
+      "path": "conflict",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1777988926565,
+      "keyFiles": [
+        "detector.go"
+      ]
+    },
+    "grounding": {
+      "path": "grounding",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1777988926566,
+      "keyFiles": [
+        "layer.go"
+      ]
+    },
+    "inference": {
+      "path": "inference",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1777988926566,
+      "keyFiles": [
+        "voice_gateway.go"
+      ]
+    },
+    "ingestion": {
+      "path": "ingestion",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1777988926567,
+      "keyFiles": [
+        "pipeline.go"
+      ]
+    },
+    "memory": {
+      "path": "memory",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1777988926568,
+      "keyFiles": [
+        "graph_store.go",
+        "incremental_learner.go"
+      ]
+    },
+    "persona": {
+      "path": "persona",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1777988926569,
+      "keyFiles": [
+        "engine.go"
+      ]
+    },
+    "schema": {
+      "path": "schema",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1777988926569,
+      "keyFiles": [
+        "types.go"
+      ]
+    },
+    "tests": {
+      "path": "tests",
+      "purpose": "Test files",
+      "fileCount": 0,
+      "lastAccessed": 1777988926570,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "grounding/layer.go",
+      "accessCount": 4,
+      "lastAccessed": 1777989442237,
+      "type": "file"
+    },
+    {
+      "path": "ingestion/pipeline.go",
+      "accessCount": 3,
+      "lastAccessed": 1777989369576,
+      "type": "file"
+    },
+    {
+      "path": "test_data/excerpts/excerpt_abcdefghijkl.json",
+      "accessCount": 1,
+      "lastAccessed": 1777989296296,
+      "type": "file"
+    },
+    {
+      "path": "test_data/mom_messages_full.txt",
+      "accessCount": 1,
+      "lastAccessed": 1777989501715,
+      "type": "file"
+    },
+    {
+      "path": "inference/voice_gateway.go",
+      "accessCount": 1,
+      "lastAccessed": 1777989599765,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

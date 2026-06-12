@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+frontend/build/
+
+# Go
+*.exe
+*.test
+*.out
+
+# Local data stores (GraphStore JSON + ObjectBox)
+data/
+backend/data/
+objectbox-data/
+*.db
+
+# Environment
+.env
+backend/.env
+frontend/.env
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
